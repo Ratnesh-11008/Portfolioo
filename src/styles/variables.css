@@ -1,0 +1,38 @@
+:root {
+  /* DARK THEME PREDOMINANT */
+  --bg-color: #050505; /* Deep rich black */
+  --bg-color-light: #111111; /* Dark gray */
+  --bg-color-lighter: #1f1f1f; /* Surface gray */
+  
+  --text-primary: #ffffff; 
+  --text-secondary: #a0aab2; 
+  
+  /* NEON ACCENTS */
+  --accent-blue: #00f3ff;
+  --accent-purple: #9d4edd;
+  --accent-color: var(--accent-blue);
+  --accent-hover: #00c3cc;
+  --accent-gradient: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+  --accent-glow: rgba(0, 243, 255, 0.4);
+  --accent-purple-glow: rgba(157, 78, 221, 0.4);
+
+  --border-color: #2a2a2a; 
+  --error-color: #ef4444; 
+
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition-speed: 0.3s;
+  --nav-height: 80px;
+}
+
+[data-theme='light'] {
+  --bg-color: #f8fafc;
+  --bg-color-light: #ffffff;
+  --bg-color-lighter: #e2e8f0;
+
+  --text-primary: #0a0a0a;
+  --text-secondary: #4a4a4a;
+
+  --border-color: #cbd5e1;
+  --accent-glow: rgba(0, 243, 255, 0.2);
+  --accent-purple-glow: rgba(157, 78, 221, 0.2);
+}

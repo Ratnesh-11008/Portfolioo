@@ -1,0 +1,110 @@
+.about-content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+/* Image styling and animation */
+.about-image-wrapper {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.about-image-wrapper.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-image {
+  position: relative;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+  transition: all var(--transition-speed) ease;
+  overflow: hidden;
+}
+
+/* Neon Glow behind image */
+.about-image::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: var(--accent-gradient);
+  z-index: -1;
+  border-radius: 14px;
+  opacity: 0.5;
+  filter: blur(8px);
+  transition: all var(--transition-speed) ease;
+}
+
+.about-image:hover {
+  transform: translateY(-8px);
+}
+
+.about-image:hover::before {
+  opacity: 1;
+  filter: blur(15px);
+}
+
+.image-placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--bg-color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  border-radius: 10px;
+  z-index: 1;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 868px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image-wrapper {
+    margin: 50px auto 0;
+    max-width: 280px;
+  }
+}

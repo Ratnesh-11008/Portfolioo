@@ -1,0 +1,132 @@
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.contact-info {
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-text {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.direct-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.direct-email:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 5px 20px rgba(0, 243, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.mail-icon {
+  font-size: 1.4rem;
+  color: var(--accent-blue);
+}
+
+.direct-email a {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.contact-form {
+  padding: 3rem;
+  border-radius: 12px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all var(--transition-speed) ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 2px var(--accent-purple-glow);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: var(--error-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.85rem;
+  position: absolute;
+  bottom: -1.4rem;
+  left: 0;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success-message {
+  margin-top: 1.5rem;
+  color: #00f3ff;
+  text-align: center;
+  font-weight: 500;
+  padding: 1rem;
+  background: rgba(0, 243, 255, 0.1);
+  border: 1px solid var(--accent-blue);
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .contact-info, .contact-form {
+    padding: 1.5rem;
+  }
+}
