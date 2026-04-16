@@ -2,35 +2,35 @@ import { useState, useEffect } from 'react';
 import { FiGithub, FiLinkedin, FiArrowRight, FiMail } from 'react-icons/fi';
 import './Hero.css';
 
-const nameToType = "Ratnesh Singh Vishen";
+const subtitleToType = "Crafting Modern Web Applications";
 
 const Hero = () => {
-  const [currentText, setCurrentText] = useState('');
+  const [currentSubtitle, setCurrentSubtitle] = useState('');
   const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
     if (!isTyping) return;
     
-    if (currentText.length < nameToType.length) {
+    if (currentSubtitle.length < subtitleToType.length) {
       const timeout = setTimeout(() => {
-        setCurrentText(nameToType.slice(0, currentText.length + 1));
+        setCurrentSubtitle(subtitleToType.slice(0, currentSubtitle.length + 1));
       }, 100);
       return () => clearTimeout(timeout);
     } else {
       setIsTyping(false);
     }
-  }, [currentText, isTyping]);
+  }, [currentSubtitle, isTyping]);
 
   return (
     <section id="home" className="hero">
       <div className="hero-content">
         <h1 className="hero-greeting">Hi, I'm</h1>
         <h2 className="hero-name">
-          {currentText}
-          <span className="cursor">|</span>
+          Ratnesh Singh Vishen
         </h2>
-        <h3 className="hero-title">
-          Full Stack Developer <span className="dev-divider">|</span> Problem Solver
+        <h3 className="hero-title gradient-text">
+          {currentSubtitle}
+          <span className="cursor">|</span>
         </h3>
         <p className="hero-desc">
           I specialize in building exceptional digital experiences. I am passionate about crafting robust, scalable applications and finding elegant solutions to complex problems.

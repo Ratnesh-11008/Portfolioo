@@ -80,24 +80,38 @@
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 15px;
   justify-content: center;
 }
 
 .skill-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 10px 20px;
+  border-radius: 25px;
   font-size: 0.95rem;
   color: var(--text-secondary);
   transition: all 0.3s ease;
   font-family: 'Fira Code', monospace;
+  min-width: 120px;
+  flex-grow: 1;
+  max-width: calc(50% - 8px);
+}
+
+.skill-icon {
+  font-size: 1.1rem;
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
 }
 
 .skill-tag:hover {
   background: rgba(0, 243, 255, 0.1);
-  color: var(--accent-blue);
+  color: #fff;
   border-color: var(--accent-blue);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 4px 15px var(--accent-glow);

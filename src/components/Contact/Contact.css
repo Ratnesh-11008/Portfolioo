@@ -83,9 +83,10 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--accent-purple);
-  box-shadow: 0 0 0 2px var(--accent-purple-glow);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 15px var(--accent-glow);
   background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
 }
 
 .form-group input.error,
@@ -106,6 +107,38 @@
   margin-top: 1rem;
   font-size: 1.1rem;
   padding: 1rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px var(--accent-glow);
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn.sending {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 var(--accent-glow); }
+  50% { transform: scale(0.98); box-shadow: 0 0 0 10px rgba(0, 243, 255, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 243, 255, 0); }
 }
 
 .submit-btn:disabled {
@@ -121,6 +154,18 @@
   padding: 1rem;
   background: rgba(0, 243, 255, 0.1);
   border: 1px solid var(--accent-blue);
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.error-message-submit {
+  margin-top: 1.5rem;
+  color: var(--error-color);
+  text-align: center;
+  font-weight: 500;
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--error-color);
   border-radius: 8px;
   animation: fadeIn 0.3s ease-in-out;
 }

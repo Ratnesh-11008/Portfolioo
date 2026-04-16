@@ -29,9 +29,9 @@
 }
 
 .edu-card:hover {
-  transform: translateY(-5px) scale(1.01);
+  transform: translateY(-8px) scale(1.02);
   border-color: var(--accent-blue);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 15px rgba(0, 243, 255, 0.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px var(--accent-glow);
 }
 
 .edu-header {

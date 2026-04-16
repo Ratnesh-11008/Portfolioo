@@ -35,18 +35,41 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
       setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
+      
+      try {
+        const response = await fetch("https://formspree.io/f/mvzdkrvv", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+          })
+        });
+
+        if (response.ok) {
+          setIsSubmitting(false);
+          setSubmitStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+          setTimeout(() => setSubmitStatus(null), 3000);
+        } else {
+          setIsSubmitting(false);
+          setSubmitStatus('error');
+          setTimeout(() => setSubmitStatus(null), 3000);
+        }
+      } catch (error) {
+        console.error("Error submitting form: ", error);
         setIsSubmitting(false);
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-        
+        setSubmitStatus('error');
         setTimeout(() => setSubmitStatus(null), 3000);
-      }, 1500);
+      }
     }
   };
 
@@ -64,7 +87,7 @@ const Contact = () => {
           </div>
         </div>
         
-        <form className="contact-form glass" onSubmit={handleSubmit} noValidate>
+        <form className="contact-form glass" onSubmit={handleSubmit} method="POST" action="https://formspree.io/f/mvzdkrvv" noValidate>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
@@ -107,12 +130,15 @@ const Contact = () => {
             {errors.message && <span className="error-message">{errors.message}</span>}
           </div>
           
-          <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>
+          <button type="submit" className={`btn btn-primary submit-btn ${isSubmitting ? 'sending' : ''}`} disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
           
           {submitStatus === 'success' && (
             <div className="success-message">Message sent successfully!</div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="error-message-submit">Failed to send message. Please try again or email directly.</div>
           )}
         </form>
       </div>

@@ -1,22 +1,40 @@
 import { useEffect, useRef, useState } from 'react';
+import { SiC, SiCplusplus, SiJavascript, SiMysql, SiGooglecolab } from 'react-icons/si';
+import { FaJava, FaHtml5, FaCss3Alt, FaReact } from 'react-icons/fa';
+import { VscVscode } from 'react-icons/vsc';
 import './Skills.css';
 
 const skillCategories = [
   {
     title: 'Programming',
-    skills: ['C', 'C++', 'Java', 'SQL']
+    skills: [
+      { name: 'C', icon: <SiC /> },
+      { name: 'C++', icon: <SiCplusplus /> },
+      { name: 'Java', icon: <FaJava /> },
+      { name: 'SQL', icon: <SiMysql /> }
+    ]
   },
   {
     title: 'Web Technologies',
-    skills: ['HTML', 'CSS', 'JavaScript', 'React']
+    skills: [
+      { name: 'HTML', icon: <FaHtml5 /> },
+      { name: 'CSS', icon: <FaCss3Alt /> },
+      { name: 'JavaScript', icon: <SiJavascript /> },
+      { name: 'React', icon: <FaReact /> }
+    ]
   },
   {
     title: 'Tools',
-    skills: ['VS Code', 'Google Colab']
+    skills: [
+      { name: 'VS Code', icon: <VscVscode /> },
+      { name: 'Google Colab', icon: <SiGooglecolab /> }
+    ]
   },
   {
     title: 'Database',
-    skills: ['MySQL']
+    skills: [
+      { name: 'MySQL', icon: <SiMysql /> }
+    ]
   }
 ];
 
@@ -55,7 +73,8 @@ const Skills = () => {
             <div className="skills-grid">
               {category.skills.map((skill, index) => (
                 <div className="skill-tag" key={index}>
-                  {skill}
+                  <span className="skill-icon">{skill.icon}</span>
+                  {skill.name}
                 </div>
               ))}
             </div>

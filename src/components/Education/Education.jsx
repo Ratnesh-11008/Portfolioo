@@ -11,13 +11,13 @@ const educationData = [
   {
     institution: 'High School',
     degree: '12th Grade (Senior Secondary)',
-    score: 'Completed',
+    score: 'Percentage: 81.9%',
     date: ''
   },
   {
     institution: 'High School',
     degree: '10th Grade (Secondary)',
-    score: 'Completed',
+    score: 'Percentage: 85.0%',
     date: ''
   }
 ];
