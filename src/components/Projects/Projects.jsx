@@ -27,7 +27,7 @@ const projectData = [
     ],
     techStack: ['React', 'Spring Boot', 'PostgreSQL', 'JWT Auth', 'REST API', 'Full Stack'],
     liveLink: 'https://smarthire-frontend-6q59.onrender.com',
-    githubLink: ''
+    githubLink: 'https://github.com/Ratnesh-11008/Job-Portal-main.git'
   },
   {
     title: 'InvestEase',
