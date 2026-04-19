@@ -27,7 +27,7 @@ const projectData = [
     ],
     techStack: ['React', 'Spring Boot', 'PostgreSQL', 'JWT Auth', 'REST API', 'Full Stack'],
     liveLink: 'https://smarthire-frontend-6q59.onrender.com',
-    githubLink: 'NA'
+    githubLink: ''
   },
   {
     title: 'InvestEase',
@@ -39,8 +39,8 @@ const projectData = [
       'Intuitive dashboard with interactive data charts'
     ],
     techStack: ['React', 'JavaScript', 'CSS', 'Chart.js', 'Node.js', 'Express.js', 'MongoDB'],
-    liveLink: 'NA',
-    githubLink: 'NA'
+    liveLink: 'https://krxna16-stock-portfolio-tool-app-bdjwdw.streamlit.app/',
+    githubLink: 'https://github.com/Ratnesh-11008/InvestEase-main.git'
   }
 ];
 
