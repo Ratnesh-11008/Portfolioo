@@ -32,25 +32,28 @@ const About = () => {
       <div className="about-content">
         <div className="about-text glass-card">
           <p>
-            Hello! I'm a motivated BE–CSE student with a strong foundation in
-            <span className="highlight"> Data Structures & Algorithms</span>, web development, and building scalable applications.
+            Hello! I'm a BE–CSE student with a strong foundation in <span className="highlight">Data Structures & Algorithms</span>, and hands-on experience in building full-stack web applications.
           </p>
           <p>
-            I enjoy tackling complex problems and rapidly learning new technologies. Whether it's crafting
-            responsive user interfaces on the frontend or designing robust serverless architectures on the backend,
-            I strive to write clean, efficient, and maintainable code.
+            I specialize in developing <span className="highlight">scalable and user-centric applications</span> using modern technologies across frontend and backend. Through projects like AI Trip Planner and Smart-Hire, I’ve worked on real-world problems involving AI integration, REST APIs, authentication systems, and cloud deployment.
           </p>
           <p>
-            As a highly adaptable team player, I thrive in collaborative environments and am constantly looking for
-            opportunities to improve my skills and contribute to impactful projects.
+            I’m a quick learner with a strong problem-solving mindset, comfortable in collaborative environments, and always eager to explore new technologies. I actively seek opportunities to contribute to <span className="highlight">impactful, real-world projects</span> while continuously growing as a developer.
           </p>
+          <div className="about-chips">
+            <span className="chip">Full Stack Development</span>
+            <span className="chip">DSA</span>
+            <span className="chip">AI Integration</span>
+            <span className="chip">Scalable Systems</span>
+            <span className="chip">Problem Solving</span>
+          </div>
         </div>
 
         <div className="about-image-wrapper" ref={imageRef}>
           <div className="about-image glass">
-            {/* Using a stylized colored block for now */}
             <div className="image-placeholder">
-              RV
+              <span className="profile-initials">RV</span>
+              <span className="profile-role">Developer</span>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 @import './variables.css';
 
 * {
@@ -25,6 +25,10 @@ body {
   background-attachment: fixed;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
 /* Base Sections */
 section {
   min-height: 100vh;
@@ -37,6 +41,7 @@ section {
 }
 
 .section-title {
+  font-family: var(--font-heading);
   font-size: 3rem;
   margin-bottom: 3.5rem;
   text-align: center;
@@ -146,11 +151,34 @@ code, .tech-font {
 
 /* Glassmorphism Helper */
 .glass {
-  background: rgba(17, 17, 17, 0.6);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+[data-theme='light'] .btn-primary {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+[data-theme='light'] .btn-primary::before {
+  display: none;
+}
+
+[data-theme='light'] .btn-outline {
+  background: #ffffff;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+[data-theme='light'] .btn-outline:hover {
+  border-color: var(--accent-blue);
+  background: rgba(2, 132, 199, 0.05);
+  box-shadow: 0 0 15px var(--accent-glow);
+  color: var(--accent-blue);
 }
 
 @media (max-width: 768px) {

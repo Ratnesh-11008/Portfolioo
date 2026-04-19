@@ -5,21 +5,39 @@ import './Projects.css';
 const projectData = [
   {
     title: 'AI Trip Planner',
-    description: 'A full-stack AI-powered web application that generates personalized travel itineraries based on user inputs such as destination, number of days, budget, and interests. The platform dynamically creates day-wise plans using AI, ensuring location-specific recommendations for places within India. It provides a user-friendly interface with responsive design and integrates real-time backend processing to deliver optimized travel plans instantly.',
+    description: [
+      'AI-powered full-stack travel itinerary generation',
+      'Personalized plans based on user destination and budget',
+      'Day-wise location-specific recommendations within India',
+      'Responsive full-stack web interface with intuitive design',
+      'Real-time backend processing and API integrations'
+    ],
     techStack: ['React.js', 'Tailwind CSS', 'FastAPI (Python)', 'Render'],
     liveLink: 'https://ai-trip-frontend.onrender.com/',
     githubLink: 'https://github.com/Ratnesh-11008/AITripPlanner.git'
   },
   {
     title: 'Smart-Hire',
-    description: 'Developed a full-stack job portal that enables candidates to apply for jobs and recruiters to post and manage listings. Implemented secure JWT-based authentication, resume uploads, and role-based access. Integrated REST APIs with a responsive UI, ensuring seamless interaction between frontend and backend. Deployed the application on cloud with PostgreSQL database for real-world scalability.',
+    description: [
+      'Full-stack job portal for candidates and recruiters',
+      'Secure JWT-based authentication and role-based access',
+      'Seamless resume upload and application management',
+      'Integrated REST APIs with a responsive modern UI',
+      'Deployed on cloud with PostgreSQL for scalability'
+    ],
     techStack: ['React', 'Spring Boot', 'PostgreSQL', 'JWT Auth', 'REST API', 'Full Stack'],
     liveLink: 'https://smarthire-frontend-6q59.onrender.com',
     githubLink: 'NA'
   },
   {
     title: 'InvestEase',
-    description: 'InvestEase is a modern stock portfolio management and analysis web application that helps users track their investments, evaluate performance, and make informed financial decisions. It allows users to add and manage holdings, view real-time portfolio insights, analyze risk and returns, and generate future predictions—all through an intuitive, user-friendly dashboard with personalized accounts for secure data access.',
+    description: [
+      'Modern stock portfolio management and analysis web app',
+      'Track investments and evaluate real-time performance',
+      'Analyze risk and generate future financial predictions',
+      'Personalized user accounts for secure data access',
+      'Intuitive dashboard with interactive data charts'
+    ],
     techStack: ['React', 'JavaScript', 'CSS', 'Chart.js', 'Node.js', 'Express.js', 'MongoDB'],
     liveLink: 'NA',
     githubLink: 'NA'
@@ -81,7 +99,11 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-              <p className="project-description">{project.description}</p>
+              <ul className="project-description-list">
+                {project.description.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
             </div>
             <div className="project-bottom">
               <ul className="project-tech-list">

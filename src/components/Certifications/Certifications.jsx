@@ -5,7 +5,11 @@ import { FiAward } from 'react-icons/fi';
 const certData = [
   { name: 'AWS Solutions Architect Associate (2025)' },
   { name: 'Infosys Springboard Full Stack Developer' },
-  { name: 'NPTEL Cloud Computing' }
+  { name: 'NPTEL Cloud Computing' },
+  { 
+    name: 'Research Paper Published',
+    description: 'Emergence of AI-driven Facial Recognition Technology: Real-time Monitoring and Attendance Management in Scopus'
+  }
 ];
 
 const Certifications = () => {
@@ -34,13 +38,16 @@ const Certifications = () => {
 
   return (
     <section id="certifications" className="certifications" ref={sectionRef}>
-      <h2 className="section-title">Certifications</h2>
+      <h2 className="section-title">Certifications & Achievements</h2>
       
       <div className={`cert-grid ${isVisible ? 'animate-in' : ''}`}>
         {certData.map((cert, index) => (
           <div className="cert-card glass" key={index} style={{ '--animation-order': index }}>
             <FiAward className="cert-icon" />
-            <h3 className="cert-name">{cert.name}</h3>
+            <div className="cert-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left' }}>
+              <h3 className="cert-name">{cert.name}</h3>
+              {cert.description && <p className="cert-description" style={{ marginTop: '8px', color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.4' }}>{cert.description}</p>}
+            </div>
           </div>
         ))}
       </div>

@@ -86,11 +86,17 @@
   filter: drop-shadow(0 0 8px var(--accent-purple-glow));
 }
 
-.project-description {
+.project-description-list {
   color: var(--text-secondary);
   font-size: 1.05rem;
   line-height: 1.7;
   margin-bottom: 2rem;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.project-description-list li {
+  margin-bottom: 0.5rem;
 }
 
 .project-bottom {
